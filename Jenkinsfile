@@ -16,10 +16,5 @@ pipeline{
                 sh 'npm run build'
             }
         }
-        stage ('Running JUNIT') {
-            steps{
-                junit '**.test.js'
-            }
-        }
     }
 }
