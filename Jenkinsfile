@@ -1,9 +1,9 @@
 pipeline{
-    agent { label 'controlnode'}
+    agent { label 'JDK11'}
     stages{
         stage('Sorce Code'){
             steps{
-                git branch:'declarative', url:'https://github.com/pixelswapnil13/BasicNodeJsProgramme.git'
+                git branch:'main', url:'https://github.com/pixelswapnil13/BasicNodeJsProgramme.git'
                 }
         }
     }
