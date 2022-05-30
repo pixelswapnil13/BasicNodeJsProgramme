@@ -16,5 +16,10 @@ pipeline{
                 sh 'npm run build'
             }
         }
+        stage('Run Test'){
+            steps{
+                sh 'node test'
+            }
+        }
     }
 }
