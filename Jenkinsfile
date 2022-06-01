@@ -23,7 +23,7 @@ pipeline{
         }
         stage('Publishing the artifacts'){
             steps{
-                sh 'npm publilsh'
+                sh 'npm publish'
             }
         }
 
