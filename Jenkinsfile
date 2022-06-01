@@ -21,11 +21,6 @@ pipeline{
                 sh 'npm pack'
             }
         }
-        stage('Publishing the artifacts'){
-            steps{
-                sh 'npm publish'
-            }
-        }
 
     }
 }
