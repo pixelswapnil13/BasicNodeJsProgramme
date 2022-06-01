@@ -18,7 +18,7 @@ pipeline{
         }
         stage('Build the project'){
             steps{
-                sh 'npm test'
+                sh 'npm run test'
             }
         }
         stage('Archiving the project'){
