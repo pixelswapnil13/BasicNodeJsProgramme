@@ -16,10 +16,16 @@ pipeline{
                 sh 'npm run build'
             }
         }
+        stage('Build the project'){
+            steps{
+                sh 'npm test'
+            }
+        }
         stage('Archiving the project'){
             steps{
                 sh 'npm pack'
             }
         }
+
     }
 }
