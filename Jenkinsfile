@@ -18,7 +18,7 @@ pipeline{
         }
         stage('Archiving the project') {
             steps {
-                sh 'npm run pack'
+                sh script: 'npm run pack'
             }
         }
         stage('Test results') {
