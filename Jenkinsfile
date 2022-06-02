@@ -16,7 +16,7 @@ pipeline{
                 sh 'npm run build'
             }
         }
-        stage('Build') {
+        stage('Archiving the project') {
             steps {
                 sh 'npm run pack'
             }
