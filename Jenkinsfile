@@ -28,7 +28,7 @@ pipeline{
         }
         stage('Sonar Analysis') {
             steps {
-                sh 'npm sonar'
+                sh 'npm run sonar'
             }
         }
 
