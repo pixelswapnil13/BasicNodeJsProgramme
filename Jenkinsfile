@@ -28,7 +28,6 @@ pipeline{
         }
         stage('Sonar Analysis') {
             steps {
-                sh 'npm install sonarqube-scanner --save-dev'
                 sh 'npm sonar'
             }
         }
