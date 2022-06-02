@@ -15,6 +15,7 @@ pipeline{
             steps{ 
             withSonarQubeEnv('SONAR_8.9'){
                 sh script: "npm run build sonar:sonar"
+               }
             }
         }
         stage('Archiving the project'){
