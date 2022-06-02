@@ -6,21 +6,48 @@ pipeline{
                 git branch:'declarative', url: 'https://github.com/pixelswapnil13/BasicNodeJsProgramme.git'
             }
         }
-        stage('Install dependancies'){
-            steps{
+        // stage('Install dependancies'){
+        //     steps{
+        //         sh 'npm install'
+        //     }
+        // }
+        // stage('Build the project'){
+        //     steps{ 
+        //     withSonarQubeEnv('SONAR_8.9'){
+        //         sh script: "npm run build sonar:sonar"
+        //        }
+        //     }
+        // }
+        // stage('Archiving the project'){
+        //     steps{
+        //         sh 'npm pack'
+        //     }
+        // }
+
+        stage('Dependencies') {
+            steps {
                 sh 'npm install'
             }
         }
-        stage('Build the project'){
-            steps{ 
-            withSonarQubeEnv('SONAR_8.9'){
-                sh script: "npm run build sonar:sonar"
-               }
+        stage('Build') {
+            steps {
+                sh 'npm run build'
             }
         }
-        stage('Archiving the project'){
-            steps{
-                sh 'npm pack'
+        stage('Build') {
+            steps {
+                sh 'npm run pack'
+            }
+        }
+        stage('Test results') {
+            steps {
+                sh 'npm test'
+            }
+        }
+        stage('Sonar Analysis') {
+            steps {
+                sh 'npm install sonarqube-scanner --save-dev'
+                sh 'npm run sonar'
             }
         }
 
